@@ -1,0 +1,145 @@
+@charset "UTF-8";
+ * {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: montserrat;
+  }
+
+  nav {
+    background: #0082e6;
+    height: 92px;
+    width: 100%;
+  }
+
+  label.logo {
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+  }
+
+  nav ul {
+    float: right;
+    margin-right: 20px;
+    /* Apply styles to <ul> */
+  }
+
+  nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+    position: relative; /* Added position relative for positioning pseudo-elements */
+    /* Apply styles to <li> */
+  }
+
+  nav ul li a {
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    position: relative; /* Added position relative for positioning pseudo-elements */
+    /* Apply styles to <a> */
+  }
+
+  nav ul li img{
+    margin-bottom: 5px;
+  }
+
+  a.active,
+  a:hover {
+    background: #1b9bff;
+    transition: .5s;
+  }
+
+  .checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+
+  #check {
+    display: none;
+  }
+
+  /* Your previous CSS code */
+  @media (max-width: 952px) {
+    label.logo {
+      font-size: 30px;
+      padding-left: 50px;
+    }
+    nav ul li a {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 858px) {
+    .checkbtn {
+      display: block;
+    }
+    ul {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #2c3e50;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+      /* Apply styles to <ul> */
+    }
+    nav ul li {
+      display: block;
+      margin: 50px 0;
+      line-height: 25px;
+      height: 65px;
+    }
+    nav ul li a {
+      font-size: 20px;
+    }
+    a:hover,
+    a.active {
+      background: none;
+      color: #0082e6;
+    }
+    #check:checked ~ ul {
+      left: 0;
+    }
+  }
+
+  /* Your previous CSS code */
+
+  /* New CSS code for <li> tags */
+  nav ul li a:before,
+  nav ul li a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px; /* Adjust the line height as needed */
+    background-color:white; /* Line color */
+    bottom: -3px; /* Adjust the line position as needed */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transition: all .5s;
+  }
+
+ 
+
+  nav ul li a:hover:before {
+    width: 100%;
+  }
+  
+
+  
